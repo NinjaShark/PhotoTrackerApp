@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PhotoTrackerApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="description_to_register">Don\'t have an account?\nRegister for one by filling out the information and tapping the Register button.</string>
+    <string name="description_login">Welcome to the Photo Tracker Application.\nPlease Sign into your account.</string>
+    <string name="description_register">Fill out the following information\nthen tap submit to create your new account.</string>
+    
+</resources>
