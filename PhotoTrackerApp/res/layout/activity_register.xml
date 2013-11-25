@@ -55,7 +55,7 @@
         android:layout_alignRight="@+id/textedit_username"
         android:layout_below="@+id/textedit_username"
         android:editable="false"
-        android:enable="fasle"
+        android:enabled="false"
         android:ems="10"
         android:inputType="textPassword"
         tools:ignore="Deprecated" />
@@ -88,7 +88,7 @@
         android:layout_toRightOf="@+id/text_email"
         android:editable="false"
         android:ems="10"
-        android:enable="false"
+        android:enabled="false"
         android:inputType="textEmailAddress"
         tools:ignore="Deprecated" />
 

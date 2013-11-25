@@ -7,5 +7,5 @@
     <string name="description_to_register">Don\'t have an account?\nRegister for one by filling out the information and tapping the Register button.</string>
     <string name="description_login">Welcome to the Photo Tracker Application.\nPlease Sign into your account.</string>
     <string name="description_register">Fill out the following information\nthen tap submit to create your new account.</string>
-    
+    <string name="description_change_account">Edit Account data and tap save to keep changes.\nE-mail cannot be changed as it is the unique identifier for your account.</string>
 </resources>

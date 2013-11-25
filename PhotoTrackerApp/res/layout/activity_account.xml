@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/textview_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:text="@string/description_change_account" />
+
+    <EditText
+        android:id="@+id/textedit_change_password_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textedit_change_password"
+        android:layout_alignRight="@+id/textedit_change_password"
+        android:layout_below="@+id/textedit_change_password"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/textedit_change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textedit_change_username"
+        android:layout_alignRight="@+id/textedit_change_username"
+        android:layout_below="@+id/textedit_change_username"
+        android:editable="true"
+        android:ems="10"
+        android:enabled="true"
+        android:inputType="textPassword"
+        tools:ignore="Deprecated" />
+
+    <EditText
+        android:id="@+id/textedit_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textedit_change_lastname"
+        android:layout_below="@+id/textedit_change_firstname"
+        android:layout_toRightOf="@+id/text_email"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textEmailAddress"
+        tools:ignore="Deprecated" />
+
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textedit_email"
+        android:layout_alignLeft="@+id/text_firstname"
+        android:editable="false"
+        android:text="*E-mail:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText,Deprecated" />
+
+    <EditText
+        android:id="@+id/textedit_change_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textview_description"
+        android:ems="10"
+        tools:ignore="TextFields" />
+
+    <TextView
+        android:id="@+id/text_change_password_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textedit_change_password_verify"
+        android:layout_toLeftOf="@+id/text_required"
+        android:text="*Verify\n  Password:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_change_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textedit_change_password_verify"
+        android:layout_alignLeft="@+id/text_change_password_verify"
+        android:text="*Password:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textedit_change_password"
+        android:layout_alignLeft="@+id/text_change_password"
+        android:text="*Username:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/textedit_change_lastname"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textedit_email"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="22dp"
+        android:ems="10"
+        tools:ignore="TextFields" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/text_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_cancel"
+        android:layout_centerHorizontal="true"
+        android:text="* Marks required fields"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textedit_change_lastname"
+        android:layout_centerVertical="true"
+        android:text="Last Name:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/text_firstname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_lastname"
+        android:layout_alignBottom="@+id/text_lastname"
+        android:layout_alignRight="@+id/text_username"
+        android:text="First Name:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/textedit_change_firstname"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_firstname"
+        android:layout_below="@+id/text_firstname"
+        android:ems="10"
+        tools:ignore="TextFields" />
+
+    <ImageView
+        android:id="@+id/imageView_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/text_required"
+        android:layout_alignLeft="@+id/text_required"
+        android:layout_alignRight="@+id/text_required"
+        android:layout_below="@+id/textedit_email"
+        android:contentDescription="Profile Image"
+        android:src="@android:drawable/ic_menu_gallery"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_save"
+        android:layout_alignBottom="@+id/button_save"
+        android:layout_alignLeft="@+id/text_change_password_verify"
+        android:text="Cancel"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textedit_email"
+        android:layout_marginBottom="18dp"
+        android:text="Save"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

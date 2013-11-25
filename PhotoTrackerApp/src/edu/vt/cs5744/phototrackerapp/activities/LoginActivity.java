@@ -1,5 +1,6 @@
-package edu.vt.cs5744.phototrackerapp;
+package edu.vt.cs5744.phototrackerapp.activities;
 
+import edu.vt.cs5744.phototrackerapp.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
