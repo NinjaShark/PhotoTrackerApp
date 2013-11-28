@@ -1,0 +1,10 @@
+edu\vt\cs5744\phototracker\service\LoginServiceImpl.class
+edu\vt\cs5744\phototracker\service\RegistrationClient.class
+edu\vt\cs5744\phototracker\service\IRegistrationService.class
+edu\vt\cs5744\phototracker\service\ILoginService.class
+edu\vt\cs5744\phototracker\service\LoginClient.class
+edu\vt\cs5744\phototracker\service\IAWSS3Service.class
+edu\vt\cs5744\phototracker\service\RegistrationServiceImpl.class
+edu\vt\cs5744\phototracker\service\User.class
+edu\vt\cs5744\phototracker\service\Utility.class
+edu\vt\cs5744\phototracker\service\AWSS3ServiceImpl.class
