@@ -91,28 +91,27 @@ public class LoginActivity extends Activity {
 	 * https://github.com/spring-projects/spring-android
 	 */
 	private void serviceConnection(String email, String password) {
-		// try {
-		//
-		// String restUrl =
-		// "http://phototrackerservice-env.elasticbeanstalk.com/rest/services/registration/register";
-		//
-		// RestTemplate restTemplate = new RestTemplate();
-		// restTemplate.getMessageConverters().add(new
-		// MappingJacksonHttpMessageConverter());
-		//
-		// Map<String, String> request = new HashMap<String, String>();
-		// request.put(PASSWORD, password);
-		// request.put(EMAIL, email);
-		//
-		// String response = restTemplate
-		// .postForObject(restUrl, request, String.class);
-		//
-		// Log.d(TAG, response);
-		// } catch (ArrayIndexOutOfBoundsException e) {
-		// Log.e(TAG, "Arguments Missing for Main Thread: "
-		// + e.getMessage());
-		// System.exit(-1); //might not be able to do this in Android
-		// }
+		try {
+		
+		 String restUrl =
+		 "http://phototrackerservice-env.elasticbeanstalk.com/rest/services/registration/register";
+		
+		 RestTemplate restTemplate = new RestTemplate();
+		 restTemplate.getMessageConverters().add(new
+		 MappingJacksonHttpMessageConverter());
+		
+		 Map<String, String> request = new HashMap<String, String>();
+		 request.put(PASSWORD, password);
+		 request.put(EMAIL, email);
+		
+		 String response = restTemplate
+		 .postForObject(restUrl, request, String.class);
+		
+		 Log.d(TAG, response);
+		 } catch (ArrayIndexOutOfBoundsException e) {
+		 Log.e(TAG, "Arguments Missing for Main Thread: "
+		 + e.getMessage());
+		}
 	}
 
 }
