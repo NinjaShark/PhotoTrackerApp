@@ -11,6 +11,12 @@ import android.widget.EditText;
 import edu.vt.cs5744.phototrackerapp.R;
 import edu.vt.cs5744.phototrackerapp.utils.InputValidator;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.web.client.RestTemplate;
+
 /**
  * This Activity handles the functionality for the login view. This is the first
  * page the user will see when launching the application. The user can log in
