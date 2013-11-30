@@ -2,6 +2,7 @@ package edu.vt.cs5744.phototrackerapp.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -60,6 +61,15 @@ public class LoginActivity extends Activity {
         			//e-mails and thus try to crack passwords for those known valid usernames/emails
         			alertDialog.setMessage("Sign In failed: You must enter a valid email or password");
         			alertDialog.setIcon(R.drawable.ic_launcher);
+        			alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							// do nothing
+							
+						}
+					});
+        			
         			alertDialog.show();
             	}
             }
