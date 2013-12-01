@@ -3,6 +3,9 @@ package edu.vt.cs5744.phototrackerapp.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.commons.validator.routines.EmailValidator;
+
+
 /**
  * Holds methods used for validating user inputs
  * 
@@ -16,24 +19,18 @@ public class InputValidator {
 	 * 
 	 * LOGIN RULES - Email
 	 * 	The email field must have content in order to sign in
-	 *	The email must be a well formed email address [check using regex]
+	 *	The email must be a well formed email address
 	 *
-	 * Regex Source: http://www.regular-expressions.info/email.html
+	 * Using Apache Commons Email Validation Checker Source: 
+	 * http://commons.apache.org/proper/commons-validator/download_validator.cgi
 	 * 
 	 * @param email
 	 * @return true if the email is valid
 	 */
 	public static boolean validateEmail(String email){
-		/* 
-		 * It typically isn't a perfect solution to use regex to validate email, however, since this is
-		 * only a prototype, regex was used. For the future, a different method of validating emails should be 
-		 * considered. Regex string came from: http://www.regular-expressions.info/email.html
-		 */
-		 Pattern p = Pattern.compile("\b[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\\.)+[A-Z]{2,4}\b");
-		 Matcher m = p.matcher(email);
 
 		//check validity 
-		if (!m.matches()) {
+		if (!EmailValidator.getInstance().isValid(email)) {
 			//email is invalid
 			return false;
 		}else{
@@ -75,6 +72,29 @@ public class InputValidator {
 			return false;
 		}else{
 			//password is valid
+			return true;
+		}
+	}
+	
+	/**
+	 * Username can only be alphanumeric and allow underscores
+	 * (no whitespaces, no special characters except underscore)
+	 * 
+	 * Regex Source: http://stackoverflow.com/questions/336210/regular-expression-for-alphanumeric-and-underscores
+	 * 
+	 * @param username
+	 * @return true if the username is valid
+	 */
+	public static boolean validateUsername(String username){
+		 Pattern p = Pattern.compile("^[A-Za-z_][A-Za-z0-9_]*$");
+		 Matcher m = p.matcher(username);
+
+		//check validity 
+		if (!m.matches()) {
+			//username is invalid
+			return false;
+		}else{
+			//username is valid
 			return true;
 		}
 	}

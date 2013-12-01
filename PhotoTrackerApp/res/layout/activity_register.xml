@@ -54,11 +54,8 @@
         android:layout_alignLeft="@+id/textedit_username"
         android:layout_alignRight="@+id/textedit_username"
         android:layout_below="@+id/textedit_username"
-        android:editable="false"
-        android:enabled="false"
         android:ems="10"
-        android:inputType="textPassword"
-        tools:ignore="Deprecated" />
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/textedit_lastname"
@@ -86,11 +83,8 @@
         android:layout_alignRight="@+id/textedit_lastname"
         android:layout_below="@+id/textedit_firstname"
         android:layout_toRightOf="@+id/text_email"
-        android:editable="false"
         android:ems="10"
-        android:enabled="false"
-        android:inputType="textEmailAddress"
-        tools:ignore="Deprecated" />
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:id="@+id/text_password"
@@ -118,7 +112,6 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textedit_email"
         android:layout_alignLeft="@+id/text_firstname"
-        android:editable="false"
         android:text="*E-mail:"
         android:textAppearance="?android:attr/textAppearanceSmall"
         tools:ignore="HardcodedText,Deprecated" />
