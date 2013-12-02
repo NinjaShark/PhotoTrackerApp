@@ -1,6 +1,7 @@
 package edu.vt.cs5744.phototrackerapp.activities;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.mapquest.android.maps.GeoPoint;
 import com.mapquest.android.maps.MapActivity;
@@ -17,10 +18,19 @@ import edu.vt.cs5744.phototrackerapp.R;
  *
  */
 public class MappingActivity extends MapActivity {
+	
+	TextView greeting;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_map);
+      setContentView(R.layout.activity_homescreen);
+      
+      Bundle bundle = getIntent().getExtras();
+      String username = bundle.getString("username");
+      
+      greeting = (TextView) findViewById(R.id.text_homeGreeting);
+      greeting.setText("Hello, " + username);
 
       // set the zoom level, center point and enable the default zoom controls 
       MapView map = (MapView) findViewById(R.id.map);

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import edu.vt.cs5744.phototrackerapp.R;
+import edu.vt.cs5744.phototrackerapp.utils.DatabaseMapping;
 import edu.vt.cs5744.phototrackerapp.utils.InputValidator;
 
 /**
@@ -29,7 +30,7 @@ import edu.vt.cs5744.phototrackerapp.utils.InputValidator;
 public class RegistrationActivity extends Activity {
 	
 	private final static String TAG = "REGISTRATION_ACTIVITY";
-	private final boolean enableDebug = true;
+	private final boolean enableDebug = false;
 	
 	private String invalidInputMessage = "";
 	//String values
@@ -47,12 +48,12 @@ public class RegistrationActivity extends Activity {
 
 		// The view has 8 components
 		// this activity has 6 edit text views
-		EditText editUsername = (EditText) findViewById(R.id.textedit_username);
-		EditText editPassword = (EditText) findViewById(R.id.textedit_password);
-		EditText editPasswordVerify = (EditText) findViewById(R.id.textedit_password_verify);
-		EditText editFirstName = (EditText) findViewById(R.id.textedit_firstname);
-		EditText editLastName = (EditText) findViewById(R.id.textedit_lastname);
-		EditText editEmail = (EditText) findViewById(R.id.textedit_email);
+		final EditText editUsername = (EditText) findViewById(R.id.textedit_username);
+		final EditText editPassword = (EditText) findViewById(R.id.textedit_password);
+		final EditText editPasswordVerify = (EditText) findViewById(R.id.textedit_password_verify);
+		final EditText editFirstName = (EditText) findViewById(R.id.textedit_firstname);
+		final EditText editLastName = (EditText) findViewById(R.id.textedit_lastname);
+		final EditText editEmail = (EditText) findViewById(R.id.textedit_email);
 
 		// this activity has 2 buttons
 		Button buttonSubmit = (Button) findViewById(R.id.button_submit);
@@ -68,13 +69,6 @@ public class RegistrationActivity extends Activity {
 			editLastName.setText(testValues[4]);
 			editEmail.setText(testValues[5]);			
 		}
-		
-		username = editUsername.getText().toString();
-		password = editPassword.getText().toString();
-		passwordVerify = editPasswordVerify.getText().toString();
-		firstName = editFirstName.getText().toString();
-		lastName = editLastName.getText().toString();
-		email = editEmail.getText().toString();
 
 		// not going to validate username, first, or last name
 		// [except for SQL injection prevention... aka, no special characters]
@@ -83,12 +77,34 @@ public class RegistrationActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
+				//Need to make sure we get the latest input from the user
+				username = editUsername.getText().toString();
+				password = editPassword.getText().toString();
+				passwordVerify = editPasswordVerify.getText().toString();
+				firstName = editFirstName.getText().toString();
+				lastName = editLastName.getText().toString();
+				email = editEmail.getText().toString();
+				
 				// validate fields
 				// if all passes, send info to server!
-				if(checkFields(password, passwordVerify, email, username, firstName, lastName)){
+				if(checkFields(getPassword(), getPasswordVerify(), getEmail(), getUsername(), getFirstName(), getLastName())){
 					//send data to the server
 					new NetworkConnections().execute("", "", "");
-					RegistrationActivity.this.finish(); //once registered close this activity and go to login
+					
+					AlertDialog alertDialog = new AlertDialog.Builder(
+        					RegistrationActivity.this).create();
+        			alertDialog.setTitle("Registration Complete");
+        			alertDialog.setMessage("Thank You for Registering, " + getUsername());
+        			alertDialog.setIcon(R.drawable.ic_launcher);
+        			alertDialog.setButton(DialogInterface.BUTTON_NEUTRAL, "OK", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							RegistrationActivity.this.finish(); //finish the registration, go back to login
+						}
+					});
+        			
+        			alertDialog.show();
 				}else{
 					AlertDialog alertDialog = new AlertDialog.Builder(
         					RegistrationActivity.this).create();
@@ -174,7 +190,7 @@ public class RegistrationActivity extends Activity {
 		}
 		
 		if(last == null){
-			last = ""; //make it empty strign
+			last = ""; //make it empty string
 		}
 		
 		//check if all checks passed [4 checks total]
@@ -305,7 +321,7 @@ public class RegistrationActivity extends Activity {
 
 		@Override
 		protected String doInBackground(String... params) {
-			serviceConnection(getUsername(),getPassword(), getFirstName(), getLastName(), getEmail());
+			serviceConnection(getUsername(), getPassword(), getFirstName(), getLastName(), getEmail());
 			return null;
 		}
 		
@@ -323,13 +339,11 @@ public class RegistrationActivity extends Activity {
 						new MappingJacksonHttpMessageConverter());
 
 				Map<String, String> request = new HashMap<String, String>();
-				request.put("FIRSTNAME", firstName);
-				request.put("LASTNAME", lastName);
-				// request.put("DOB", "5-7-81"); //might be added in a future
-				// version
-				request.put("USERNAME", username);
-				request.put("PASSWORD", password);
-				request.put("EMAIL", email);
+				request.put(DatabaseMapping.NAME, firstName + " " + lastName);
+				request.put(DatabaseMapping.DOB, "5-7-81"); //Dummy data for now, this will be a future feature
+				request.put(DatabaseMapping.USERNAME, username);
+				request.put(DatabaseMapping.PASSWORD, password);
+				request.put(DatabaseMapping.EMAIL, email);
 
 				String response = restTemplate.postForObject(restUrl, request,
 						String.class);

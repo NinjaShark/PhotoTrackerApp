@@ -127,16 +127,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/button_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_submit"
-        android:layout_alignBottom="@+id/button_submit"
-        android:layout_alignLeft="@+id/textedit_firstname"
-        android:text="Cancel"
-        tools:ignore="HardcodedText" />
-
     <TextView
         android:id="@+id/text_firstname"
         android:layout_width="wrap_content"
@@ -158,12 +148,20 @@
         tools:ignore="TextFields" />
 
     <Button
+        android:id="@+id/button_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="Cancel"
+        tools:ignore="HardcodedText" />
+
+    <Button
         android:id="@+id/button_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textedit_email"
-        android:layout_below="@+id/text_required"
-        android:layout_marginTop="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:text="Submit"
         tools:ignore="HardcodedText" />
 

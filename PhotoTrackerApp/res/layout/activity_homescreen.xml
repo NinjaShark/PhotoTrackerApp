@@ -4,44 +4,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/imageView_profileCover"
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
-        android:contentDescription="Profile Image"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/text_home_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/text_homeGreeting"
-        android:layout_below="@+id/text_homeGreeting"
-        android:layout_marginTop="23dp"
-        android:text="Additional Information can go here"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        tools:ignore="HardcodedText" />
-
-    <ListView
-        android:id="@+id/list_homeOptions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/text_home_details"
-        android:layout_marginTop="20dp" >
-    </ListView>
-
     <TextView
         android:id="@+id/text_homeGreeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/imageView_profileCover"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         android:text="Hello, [Username]"
         android:textAppearance="?android:attr/textAppearanceMedium"
         tools:ignore="HardcodedText" />
+
+    <RelativeLayout
+        android:id="@+id/layout_for_map"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/text_homeGreeting"
+        android:layout_marginTop="16dp" >
+        
+         <com.mapquest.android.maps.MapView
+		    xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/map"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent"
+		    android:clickable="true"
+		    android:apiKey=""
+		  />        
+        
+
+    </RelativeLayout>
 
 </RelativeLayout>
