@@ -32,23 +32,7 @@
             android:label="@string/app_name" >
         </activity>
         <activity
-            android:name="edu.vt.cs5744.phototrackerapp.activities.HomeTabActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="edu.vt.cs5744.phototrackerapp.activities.CameraTabActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="edu.vt.cs5744.phototrackerapp.activities.AccountTabActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
             android:name="edu.vt.cs5744.phototrackerapp.activities.MappingActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="edu.vt.cs5744.phototrackerapp.activities.TabLayoutActivity"
             android:label="@string/app_name" >
         </activity>
     </application>
