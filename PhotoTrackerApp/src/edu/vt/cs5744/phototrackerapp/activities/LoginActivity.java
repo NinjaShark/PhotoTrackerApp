@@ -11,7 +11,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,7 +18,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import edu.vt.cs5744.phototrackerapp.R;
 import edu.vt.cs5744.phototrackerapp.utils.DatabaseMapping;
-import edu.vt.cs5744.phototrackerapp.utils.InputValidator;
 
 /**
  * This Activity handles the functionality for the login view. This is the first
@@ -154,7 +152,7 @@ public class LoginActivity extends Activity {
 	 * 
 	 * @author Eileen Balci
 	 */
-	public class NetworkConnections extends AsyncTask<String, String, String> {
+	private class NetworkConnections extends AsyncTask<String, String, String> {
 
 		@Override
 		protected String doInBackground(String... params) {

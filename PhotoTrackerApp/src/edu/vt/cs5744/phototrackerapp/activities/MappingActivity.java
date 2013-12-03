@@ -19,7 +19,7 @@ import edu.vt.cs5744.phototrackerapp.R;
  */
 public class MappingActivity extends MapActivity {
 	
-	TextView greeting;
+	private TextView greeting;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -317,7 +317,7 @@ public class RegistrationActivity extends Activity {
 	 * Handle network connections in an AsyncTask
 	 * @author Eileen Balci
 	 */
-	public class NetworkConnections extends AsyncTask<String, String, String> {
+	private class NetworkConnections extends AsyncTask<String, String, String> {
 
 		@Override
 		protected String doInBackground(String... params) {
