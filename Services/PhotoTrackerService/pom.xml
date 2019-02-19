@@ -199,17 +199,20 @@
         <artifactId>ojdbc6</artifactId>
         <version>11.1.0.7.0</version>
       </dependency>
+	 <!-->
       <dependency>
 		  <groupId>org.springframework</groupId>
 		  <artifactId>org.springframework.test</artifactId>
 		  <version>3.1.1.RELEASE</version>
 	  </dependency>
+<!-->
       <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
 		<scope>provided</scope>
         <version>2.4</version>
       </dependency>
+	 <!-->
        <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-aop</artifactId>
@@ -265,6 +268,7 @@
         <artifactId>spring-web</artifactId>
         <version>3.1.0.RELEASE</version>
       </dependency>
+<!-->
       <dependency>
 		<groupId>com.jpmorgan.ct.lri.busserv.oracle</groupId>
 		 <artifactId>ucp</artifactId>
